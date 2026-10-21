@@ -1,0 +1,19 @@
+# SiN game data — purchase required (SiN Gold / Multiplayer). Never commit.
+*.sin
+*.dll
+*.exe
+*.pak
+steam_appid.txt
+/data/
+/sin-private/
+# Host/game tree copies dropped in the repo by mistake (not configs/base/)
+/base/
+/sin/
+
+.env
+.env.*
+!.env.example
+node_modules/
+.DS_Store
+Thumbs.db
+*.log

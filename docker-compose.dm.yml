@@ -1,0 +1,20 @@
+# Coolify app: sin-dm — stock Multiplayer sin.exe via Wine
+# Host game tree at /data/sin-private (sin.exe + base/paks) — not in git.
+services:
+  dm:
+    build: .
+    image: sin-servers:dm
+    # Coolify "Compose Empty" / local image: never pull from Docker Hub
+    pull_policy: never
+    container_name: sin-dm
+    restart: unless-stopped
+    environment:
+      SIN_HOSTNAME: "Shavargos SiN DM"
+      SIN_PORT: "22451"
+      SIN_MAXCLIENTS: "16"
+      SIN_MAP: oilrigdm
+      SIN_DATA: /data
+    volumes:
+      - /data/sin-private:/data:ro
+    ports:
+      - "22451:22451/udp"
